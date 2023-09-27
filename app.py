@@ -1,4 +1,5 @@
 from flask import Flask, render_template,url_for, redirect 
+from gevent.pywsgi import WSGIServer
 from formmodul import Input
 from model import get_prediction
 app = Flask(__name__)
@@ -18,4 +19,5 @@ def home():
     return render_template("index.html",form=form, predicted_score=int(predicted_score))
 
 if __name__=="__main__":
-    app.run(debug = True)
+    http_server = WSGIServer(('', 5000), app)
+    http_server.serve_forever()
