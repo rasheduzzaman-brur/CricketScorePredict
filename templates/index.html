@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Home{%endblock%}
+
+{%block content %} 
+<h1 class="text-dark text-center">T20 World Cup Score Prediction</h1>
+<form action="" method="post">
+    {{form.hidden_tag()}}
+    <table class="table table-info" >
+    <tr class="mb-4"> 
+       
+        <td>
+            <h4> {{form.battig_team.label}}</h4>
+            {{form.battig_team}}</td>
+        
+        <td>
+            <h4>{{form.bowling_team.label}}</h4>
+            {{form.bowling_team}}</td>
+    </tr>
+    <tr>
+        
+        <td>
+            <h4>{{form.city.label}}</h4>
+            {{form.city}}</td>
+        
+        <td>
+            <h4>{{form.currentscore.label}}</h4>
+            {{form.currentscore}}</td>
+    </tr>
+    <tr>        
+        <td>
+            <h4>{{form.Wickets.label}}</h4>
+            {{form.Wickets}}</td>
+        
+        <td>
+            <h4>{{form.last_five.label}}</h4>
+            {{form.last_five}}</td>
+    </tr>
+    <tr>
+        <td>
+            <h4>{{form.overs.label}}</h4>
+            {{form.overs}}</td>
+            <td></td>
+    </tr>
+    <tr>
+        <td>{{form.submit}}</td>
+        <td></td>
+    </tr>
+</table>
+</form>
+<h2 class="text-success">First innings score : {{predicted_score}}</h2>
+{%endblock%}
